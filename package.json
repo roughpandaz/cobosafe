@@ -9,7 +9,7 @@
   "scripts": {
     "compile": "brownie compile",
     "compile:hardhat": "hardhat compile",
-    "deploy:hardhat": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:hardhat": "hardhat run scripts/deployExample.js --network localhost",
     "node": "hardhat node"
   },
   "author": "argussupport@cobo.com",
