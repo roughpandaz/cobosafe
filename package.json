@@ -7,8 +7,20 @@
     "contracts"
   ],
   "scripts": {
-    "compile": "brownie compile"
+    "compile": "brownie compile",
+    "compile:hardhat": "hardhat compile",
+    "deploy:hardhat": "hardhat run scripts/deploy.js --network localhost",
+    "node": "hardhat node"
   },
   "author": "argussupport@cobo.com",
-  "license": "LGPL-3.0"
+  "license": "LGPL-3.0",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.15"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.1.0",
+    "ethers": "^6.13.4"
+  }
 }

@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: LGPL-3.0-only
 pragma solidity ^0.8.19;
 
-/// @dev Common errors. This helps reducing the contract size.
-library Errors {
+/// @dev Common CustomErrors. This helps reducing the contract size.
+library CustomErrors {
     // "E1";
 
     // Call/Static-call failed.
