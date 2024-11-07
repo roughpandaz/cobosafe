@@ -2,8 +2,32 @@
 
 const hre = require("hardhat");
 const ethers = require("ethers");
+const { ethers } = require("hardhat");
+const Safe = require("@safe-global/protocol-kit").default;
+const { SafeFactory, EthersAdapter } = require("@safe-global/protocol-kit");
+const { SafeAccountConfig } = require("@safe-global/protocol-kit");
+const { SafeTransactionOptionalProps } = require("@safe-global/protocol-kit");
 
 async function main() {
+  const [deployer, delegate] = await hre.ethers.getSigners();
+  // Retrieve deployed contract addresses
+  const safeMasterCopyAddress = ethers.getAddress(
+    "0xae99CA7255Ea17ea4af2428C612Cf10CACFafaeE"
+  );
+  const safeProxyFactoryAddress = ethers.getAddress(
+    "0x59ddD083Cf820f568eB3a40eD833AC715Db6D6B5"
+  );
+  const fallbackHandlerAddress = ethers.getAddress(
+    "0xdc1336f9e6488cd03b533449ea723ce32f2b1ff3"
+  );
+
+  const safeAddress = ethers.getAddress(
+    "0xcd28417f1d4930f879f9aee7ebf2e9cc19d2c867"
+  );
+
+  const moduleAddress = ethers.getAddress(
+    "0xc3e53F4d16Ae77Db1c982e75a937B9f60FE63690"
+
   // Get the contract factories
   const CoboFactory = await hre.ethers.getContractFactory("CoboFactory");
   const CoboSafeAccount = await hre.ethers.getContractFactory(
